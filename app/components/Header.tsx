@@ -62,13 +62,13 @@ export default function Header() {
                         <Link href="/" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Inicio</Link>
                     </li>
                     <li>
-                        <Link href="/servicios" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Nosotros</Link>
+                        <Link href="/nosotros" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Nosotros</Link>
                     </li>
                     <li>
                         <Link href="/medicos" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Médicos</Link>
                     </li>
                     <li>
-                        <Link href="/nosotros" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Servicios</Link>
+                        <Link href="/servicios" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Servicios</Link>
                     </li>
                     <li>
                         <Link href="/Blog" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Blog</Link>
