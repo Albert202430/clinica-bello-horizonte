@@ -13,10 +13,9 @@ export type Doctor = {
   imagen: string;
   email?: string;
   // Nuevos campos basados en la referencia:
-  universidadPregrado?: string;
-  universidadEspecialidad?: string;
-  maestrias?: string;
-  logros?: string;
+  cmp?:string;
+  rne?:string;
+  
   horarios?: Horario[];
 };
 

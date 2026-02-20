@@ -21,10 +21,6 @@ export default function ServiceCard({ servicio }: { servicio: Servicio }) {
       <p className="text-gray-500 leading-relaxed text-sm mb-6 flex-grow">
         {servicio.descripcion}
       </p>
-
-      <button className="font-bold text-[#0173BC] flex items-center gap-2 hover:gap-4 transition-all border-b-2 border-transparent hover:border-[#0173BC] pb-1">
-        Saber más <span>→</span>
-      </button>
     </div>
   );
 }
