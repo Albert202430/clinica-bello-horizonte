@@ -5,15 +5,15 @@ import { blogPosts } from "@/app/blog/data/blogPosts";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { 
-  Calendar, 
-  User, 
-  Clock, 
-  ArrowLeft, 
-  Share2, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
+import {
+  Calendar,
+  User,
+  Clock,
+  ArrowLeft,
+  Share2,
+  Facebook,
+  Twitter,
+  Linkedin,
   Link2,
   Eye,
   Bookmark
@@ -27,15 +27,15 @@ type PageProps = {
 };
 
 export default function ArticuloPage({ params }: PageProps) {
-  // ✅ CORRECCIÓN: Usamos React.use() para resolver la Promise
+  // 
   const { slug } = use(params);
-  
+
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
-  
+
   // Ahora podemos usar slug directamente
   const post = blogPosts.find((p) => p.slug === slug);
-  
+
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
@@ -79,7 +79,7 @@ export default function ArticuloPage({ params }: PageProps) {
       {/* Hero Section con Parallax */}
       <div className="relative h-[70vh] min-h-[600px] overflow-hidden">
         {/* Imagen de fondo con efecto parallax */}
-        <motion.div 
+        <motion.div
           style={{ scale }}
           className="absolute inset-0"
         >
@@ -95,13 +95,13 @@ export default function ArticuloPage({ params }: PageProps) {
         </motion.div>
 
         {/* Barra de progreso de lectura */}
-        <motion.div 
+        <motion.div
           className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0173BC] to-[#10b5c5] z-50"
           style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
         />
 
         {/* Contenido del hero */}
-        <motion.div 
+        <motion.div
           style={{ opacity }}
           className="absolute inset-0 flex items-end"
         >
@@ -115,25 +115,6 @@ export default function ArticuloPage({ params }: PageProps) {
               Volver al Blog
             </Link>
 
-            {/* Metadatos */}
-            <div className="flex flex-wrap items-center gap-4 text-sm mb-4">
-              <span className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                <Calendar size={14} />
-                {post.fecha}
-              </span>
-              <span className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                <User size={14} />
-                {post.autor}
-              </span>
-              <span className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                <Clock size={14} />
-                {tiempoLectura} min lectura
-              </span>
-              <span className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                <Eye size={14} />
-                {Math.floor(post.likes * 2.5)} vistas
-              </span>
-            </div>
 
             {/* Título */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-2xl">
@@ -160,93 +141,7 @@ export default function ArticuloPage({ params }: PageProps) {
 
       {/* El resto del contenido se mantiene igual... */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-        {/* Barra de acciones flotante */}
-        <div className="sticky top-24 z-40 flex justify-end mb-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-full shadow-2xl p-2 flex items-center gap-2 border border-gray-100"
-          >
-            {/* Botón Like */}
-            <LikeButton postId={post.id} initialLikes={post.likes} />
 
-            {/* Botón Guardar */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={toggleSave}
-              className="relative flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300"
-              style={{
-                background: isSaved 
-                  ? "linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)" 
-                  : "linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)",
-              }}
-            >
-              <Bookmark
-                size={18}
-                className={isSaved ? "fill-yellow-600 text-yellow-600" : "text-gray-600"}
-              />
-              <span className={isSaved ? "text-yellow-800" : "text-gray-600"}>
-                {isSaved ? "Guardado" : "Guardar"}
-              </span>
-            </motion.button>
-
-            {/* Botón Compartir */}
-            <div className="relative">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setShowShareMenu(!showShareMenu)}
-                className="px-4 py-2 rounded-full bg-gradient-to-r from-[#0173BC] to-[#10b5c5] text-white flex items-center gap-2"
-              >
-                <Share2 size={18} />
-                Compartir
-              </motion.button>
-
-              {/* Menú de compartir */}
-              {showShareMenu && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                  className="absolute bottom-full mb-2 right-0 bg-white rounded-xl shadow-2xl p-2 min-w-[200px] border border-gray-100"
-                >
-                  <button
-                    onClick={() => window.open(`https://facebook.com/sharer/sharer.php?u=${shareUrl}`)}
-                    className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg transition-colors"
-                  >
-                    <Facebook size={18} className="text-blue-600" />
-                    <span>Facebook</span>
-                  </button>
-                  <button
-                    onClick={() => window.open(`https://twitter.com/intent/tweet?url=${shareUrl}`)}
-                    className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg transition-colors"
-                  >
-                    <Twitter size={18} className="text-sky-500" />
-                    <span>Twitter</span>
-                  </button>
-                  <button
-                    onClick={() => window.open(`https://linkedin.com/sharing/share-offsite/?url=${shareUrl}`)}
-                    className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg transition-colors"
-                  >
-                    <Linkedin size={18} className="text-blue-700" />
-                    <span>LinkedIn</span>
-                  </button>
-                  <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(shareUrl);
-                      alert("¡Enlace copiado!");
-                    }}
-                    className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg transition-colors"
-                  >
-                    <Link2 size={18} className="text-gray-600" />
-                    <span>Copiar enlace</span>
-                  </button>
-                </motion.div>
-              )}
-            </div>
-          </motion.div>
-        </div>
 
         {/* El resto del contenido del artículo se mantiene igual... */}
         <div className="prose prose-lg max-w-none">
@@ -254,16 +149,16 @@ export default function ArticuloPage({ params }: PageProps) {
             {post.excerpt}
           </p>
 
-          
+
 
           <blockquote className="border-l-4 border-[#10b5c5] pl-6 italic text-gray-700 my-8 text-lg bg-gradient-to-r from-blue-50 to-transparent p-6 rounded-r-2xl">
             "La prevención es la mejor medicina. Cuidar nuestra salud hoy es la inversión más importante para nuestro futuro."
           </blockquote>
 
-          
+
 
           <h2 className="text-2xl font-bold text-gray-800 mt-10 mb-4">Beneficios principales</h2>
-          
+
           <ul className="space-y-3 mb-8">
             <li className="flex items-start gap-3">
               <span className="w-6 h-6 bg-gradient-to-r from-[#0173BC] to-[#10b5c5] rounded-full flex items-center justify-center text-white text-sm flex-shrink-0 mt-0.5">✓</span>
@@ -280,21 +175,7 @@ export default function ArticuloPage({ params }: PageProps) {
           </ul>
         </div>
 
-        {/* Sección de autor */}
-        <div className="mt-16 p-8 bg-gradient-to-r from-gray-50 to-white rounded-2xl border border-gray-100">
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-gradient-to-r from-[#0173BC] to-[#10b5c5] rounded-full flex items-center justify-center text-white text-2xl font-bold">
-              {post.autor.charAt(0)}
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-800">{post.autor}</h3>
-              <p className="text-sm text-gray-500">Especialista en Salud y Bienestar</p>
-              <p className="text-sm text-gray-600 mt-2">
-                Artículo verificado por el equipo médico de Clínica Bello Horizonte
-              </p>
-            </div>
-          </div>
-        </div>
+
 
         {/* Artículos relacionados */}
         {relacionados.length > 0 && (
@@ -336,7 +217,7 @@ export default function ArticuloPage({ params }: PageProps) {
 
         {/* Llamado a la acción */}
         <div className="mt-16 text-center">
-          <Link href="/cita">
+          <Link href="/#agendar-cita">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

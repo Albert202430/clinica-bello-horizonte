@@ -17,6 +17,6 @@ export const stats = [
     {
         text: "MÉDICOS",
         subtext: "ESPECIALISTAS",
-        count: "33",
+        count: "60",
     },
 ];

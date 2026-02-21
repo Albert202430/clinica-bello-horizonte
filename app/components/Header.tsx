@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -76,7 +76,7 @@ export default function Header() {
                     </li>
                     <li className="mt-4 md:mt-0">
                         <Link
-                            href="/cita"
+                            href="/#agendar-cita"
                             onClick={closeMenu}
                             className={`px-5 py-2 md:px-4 md:py-1.5 rounded-lg transition-all text-center ${isScrolled
                                 ? 'bg-[#0173BC] text-white hover:bg-blue-700'

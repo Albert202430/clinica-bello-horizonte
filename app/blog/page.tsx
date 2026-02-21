@@ -56,10 +56,8 @@ export default function BlogPage() {
             className="space-y-6"
           >
             <h1 className="text-5xl md:text-7xl font-black">
-              <span className="text-white">Blog de</span>{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60 drop-shadow-2xl">
-                Salud & Bienestar
-              </span>
+              <span className="text-white">Blog </span>{" "}
+
             </h1>
 
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
@@ -108,8 +106,8 @@ export default function BlogPage() {
               <button
                 onClick={() => setOrden("reciente")}
                 className={`px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${orden === "reciente"
-                    ? "bg-gradient-to-r from-[#0173BC] to-[#10b5c5] text-white shadow-lg"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  ? "bg-gradient-to-r from-[#0173BC] to-[#10b5c5] text-white shadow-lg"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
               >
                 <Sparkles size={18} />
@@ -118,8 +116,8 @@ export default function BlogPage() {
               <button
                 onClick={() => setOrden("popular")}
                 className={`px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${orden === "popular"
-                    ? "bg-gradient-to-r from-[#0173BC] to-[#10b5c5] text-white shadow-lg"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  ? "bg-gradient-to-r from-[#0173BC] to-[#10b5c5] text-white shadow-lg"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
               >
                 <TrendingUp size={18} />

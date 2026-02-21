@@ -5,14 +5,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronRight, MessageCircle } from 'lucide-react';
 
 const specialties = [
-    "Medicina General",
-    "Pediatría",
-    "Ginecología",
+    "Anestesiologia",
     "Cardiología",
+    "Cirugía cabeza y cuello",
+    "Cirugía general",
+    "Cirugía pediátrica",
+    "Cirugía oncológica",
+    "Cirugía de tòrax y cardiovascular",
     "Dermatología",
+    "Endocrinología",
+    "Gastroenterología",
+    "Ginecología y obstetricia",
+    "Herniología",
+    "Infectología",
+    "Medicina fisica y rehabilitación",
+    "Medicina interna",
+    "Medicina interna - UCI",
+    "Nefrología",
+    "Neumología",
+    "Neurología",
+    "Oftalmología",
     "Odontología",
-    "Psicología",
-    "Otros"
+    "Oncologia clinica",
+    "Pediatría",
+    "psicología",
+    "Traumatología",
+    "Urología"
 ];
 
 const PHONE_NUMBER = "51947052846";
@@ -21,7 +39,7 @@ export default function WhatsAppFloat() {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleWhatsAppClick = (specialty: string) => {
-        const message = `Hola, quisiera información sobre la especialidad de ${specialty}`;
+        const message = `Hola, quisiera información para agendar una cita en la especialidad de ${specialty}`;
         const url = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     };

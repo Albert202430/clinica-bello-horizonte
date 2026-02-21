@@ -48,7 +48,7 @@ export default function Footer() {
                                 { name: 'Inicio', path: '/' },
                                 { name: 'Nosotros', path: '/nosotros' },
                                 { name: 'Médicos', path: '/medicos' },
-                                { name: 'Citas', path: '/citas' },
+                                { name: 'servicios', path: '/servicios' },
 
                             ].map((link, idx) => (
                                 <li key={idx}>
