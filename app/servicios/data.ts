@@ -71,52 +71,186 @@ export const servicios: Servicio[] = [
 
 
 export const especialidades: Especialidad[] = [
-  {
-    id: 1,
-    nombre: "Cardiología",
-    descripcionCorta: "Cuidado experto del corazón y prevención de enfermedades cardiovasculares.",
-    icono: "❤️",
-    disponible: true,
-    slug: "cardiologia"
+  { id: 1, nombre: "Anestesiología", 
+    descripcionCorta: "Cuidado y seguridad del paciente durante procedimientos quirúrgicos.", 
+    icono: "😴", 
+    disponible: true, 
+    slug: "anestesiologia" 
   },
-  {
-    id: 2,
-    nombre: "Pediatría",
-    descripcionCorta: "Atención integral para el crecimiento y bienestar de los más pequeños.",
-    icono: "👶",
-    disponible: true,
-    slug: "pediatria"
+  { id: 2, 
+    nombre: "Cardiología", 
+    descripcionCorta: "Cuidado experto del corazón y prevención cardiovascular.", 
+    icono: "❤️", 
+    disponible: true, 
+    slug: "cardiologia" 
   },
-  {
-    id: 3,
-    nombre: "Ginecología",
-    descripcionCorta: "Especialistas en salud reproductiva y cuidado integral de la mujer.",
-    icono: "👩",
-    disponible: true,
-    slug: "ginecologia"
+  { id: 3, 
+    nombre: "Cirugía de Cabeza y Cuello", 
+    descripcionCorta: "Tratamiento quirúrgico de patologías en región cervical y facial.", 
+    icono: "👤", 
+    disponible: true, 
+    slug: "cirugia-cabeza-cuello" 
   },
-  {
-    id: 4,
-    nombre: "Traumatología",
-    descripcionCorta: "Tratamiento avanzado de lesiones óseas, musculares y articulares.",
-    icono: "🦴",
-    disponible: true,
-    slug: "traumatologia"
+  { id: 4, nombre: "Cirugía General", 
+    descripcionCorta: "Intervenciones quirúrgicas del aparato digestivo y pared abdominal.", 
+    icono: "✂️", 
+    disponible: true, 
+    slug: "cirugia-general" 
   },
-  {
-    id: 5,
-    nombre: "Dermatología",
-    descripcionCorta: "Expertos en el cuidado, diagnóstico y tratamiento de la piel.",
-    icono: "✨",
-    disponible: true,
-    slug: "dermatologia"
+  { id: 5, nombre: "Cirugía Oncológica", 
+    descripcionCorta: "Tratamiento quirúrgico especializado de tumores y procesos neoplásicos.", 
+    icono: "🎗️", 
+    disponible: true, 
+    slug: "cirugia-oncologica" 
   },
-  {
-    id: 6,
-    nombre: "Neurología",
-    descripcionCorta: "Atención especializada del sistema nervioso y funciones cerebrales.",
-    icono: "🧠",
-    disponible: true,
-    slug: "neurologia"
+  { id: 6, 
+    nombre: "Cirugía Pediátrica", 
+    descripcionCorta: "Cirugía especializada para neonatos, niños y adolescentes.", 
+    icono: "🧒", 
+    disponible: true, 
+    slug: "cirugia-pediatrica" 
+  },
+  { id: 7, 
+    nombre: "Cirugía de Tórax y Cardiovascular", 
+    descripcionCorta: "Cirugía compleja de pulmones, corazón y grandes vasos.", 
+    icono: "🫁", 
+    disponible: true, 
+    slug: "cirugia-torax" 
+  },
+  { id: 8, nombre: "Dermatología", 
+    descripcionCorta: "Expertos en el cuidado, diagnóstico y tratamiento de la piel.", 
+    icono: "✨", disponible: true, 
+    slug: "dermatologia" 
+  },
+  { id: 9, nombre: "Endocrinología", 
+    descripcionCorta: "Tratamiento de trastornos hormonales y del metabolismo.", 
+    icono: "⚖️", 
+    disponible: true, 
+    slug: "endocrinologia" 
+  },
+  { id: 10, nombre: "Gastroenterología", 
+    descripcionCorta: "Salud del sistema digestivo, estómago e intestinos.", 
+    icono: "🍕", 
+    disponible: true, 
+    slug: "gastroenterologia" 
+  },
+  { id: 11, 
+    nombre: "Ginecología", 
+    descripcionCorta: "Cuidado integral de la salud reproductiva de la mujer.", 
+    icono: "👩", 
+    disponible: true, 
+    slug: "ginecologia" 
+  },
+  { id: 12, 
+    nombre: "Hematología", 
+    descripcionCorta: "Estudio y tratamiento de las enfermedades de la sangre.", 
+    icono: "🩸", 
+    disponible: true, 
+    slug: "hematologia" 
+  },
+  { id: 13, 
+    nombre: "Infectología", 
+    descripcionCorta: "Prevención y tratamiento de enfermedades infecciosas.", 
+    icono: "🦠", 
+    disponible: true, 
+    slug: "infectologia" 
+  },
+  { id: 14, 
+    nombre: "Medicina Física y Rehabilitación", 
+    descripcionCorta: "Recuperación de funciones motoras y terapia física.", 
+    icono: "🏃", 
+    disponible: true, 
+    slug: "rehabilitacion" 
+  },
+  { id: 15,
+    nombre: "Medicina Interna", 
+    descripcionCorta: "Atención integral del adulto y diagnóstico de enfermedades complejas.", 
+    icono: "🩺", 
+    disponible: true, 
+    slug: "medicina-interna" 
+  },
+  { id: 16, 
+    nombre: "Medicina Intensiva - UCI", 
+    descripcionCorta: "Cuidados críticos para pacientes en estado delicado.", 
+    icono: "🏥", 
+    disponible: true, 
+    slug: "uci" 
+  },
+  { id: 17, 
+    nombre: "Nefrología", 
+    descripcionCorta: "Especialistas en la salud y función de los riñones.", 
+    icono: "💧", 
+    disponible: true, 
+    slug: "nefrologia" 
+  },
+  { id: 18, 
+    nombre: "Neumología", 
+    descripcionCorta: "Cuidado del sistema respiratorio y enfermedades pulmonares.", 
+    icono: "🌬️", 
+    disponible: true, 
+    slug: "neumologia" 
+  },
+  { id: 19, 
+    nombre: "Neurocirugía", 
+    descripcionCorta: "Cirugía especializada del cerebro y sistema nervioso.", 
+    icono: "🧠", 
+    disponible: true, 
+    slug: "neurocirugia" 
+  },
+  { id: 20, 
+    nombre: "Neurología", 
+    descripcionCorta: "Diagnóstico de trastornos cerebrales y del sistema nervioso.", 
+    icono: "⚡", 
+    disponible: true, 
+    slug: "neurologia" 
+  },
+  { id: 21, 
+    nombre: "Odontología", 
+    descripcionCorta: "Salud dental integral y estética bucal.", 
+    icono: "🦷", 
+    disponible: true, 
+    slug: "odontologia"
+  },
+  { id: 22, 
+    nombre: "Oftalmología", 
+    descripcionCorta: "Cuidado de la visión y tratamiento de enfermedades oculares.", 
+    icono: "👁️", 
+    disponible: true, 
+    slug: "oftalmologia"
+  },
+  { id: 23, 
+    nombre: "Oncología Clínica", 
+    descripcionCorta: "Tratamiento médico especializado contra el cáncer.", 
+    icono: "🎗️", 
+    disponible: true, 
+    slug: "oncologia" 
+  },
+  { id: 24, 
+    nombre: "Pediatría", 
+    descripcionCorta: "Atención médica integral para bebés y niños.", 
+    icono: "👶", 
+    disponible: true, 
+    slug: "pediatria" 
+  },
+  { id: 25, 
+    nombre: "Psicología", 
+    descripcionCorta: "Apoyo emocional y bienestar de la salud mental.", 
+    icono: "🗣️", 
+    disponible: true, 
+    slug: "psicologia" 
+  },
+  { id: 26, 
+    nombre: "Traumatología y Ortopedia", 
+    descripcionCorta: "Lesiones óseas, musculares y articulares.", 
+    icono: "🦴", 
+    disponible: true, 
+    slug: "traumatologia" 
+  },
+  { id: 27, 
+    nombre: "Urología", 
+    descripcionCorta: "Salud del sistema urinario y aparato reproductor masculino.", 
+    icono: "💧", 
+    disponible: true, 
+    slug: "urologia" 
   }
 ];

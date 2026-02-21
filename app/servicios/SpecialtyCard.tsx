@@ -14,9 +14,7 @@ export default function SpecialtyCard({ especialidad }: { especialidad: Especial
           {especialidad.descripcionCorta}
         </p>
       </div>
-      <div className="text-gray-300 group-hover:text-[#0173BC] group-hover:translate-x-1 transition-all">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </div>
+      
     </div>
   );
 }
