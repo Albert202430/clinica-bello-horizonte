@@ -6,9 +6,6 @@ import Estadisticas from "@/app/components/Estadisticas";
 import DoctorsSection from "@/app/components/DoctorsSection";
 import TeamSection from "@/app/components/TeamSection";
 
-
-
-
 export default function Home() {
   return (
     <main>
@@ -37,15 +34,24 @@ export default function Home() {
           >
             Primera clínica del sector oeste
           </motion.p>
+
+          {/* Título con gradiente animado */}
           <motion.h1
-            className="text-white text-5xl md:text-8xl font-black tracking-tighter drop-shadow-2xl"
-            style={{ textShadow: "0px 0px 20px rgba(255,255,255,0.3)" }}
+            className="text-5xl md:text-8xl font-black tracking-tighter"
+            style={{
+              backgroundImage: "linear-gradient(90deg, #27d2e3, white, #27d2e3)",
+              backgroundSize: "200% auto",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              color: "transparent",
+              textShadow: "0px 0px 20px rgba(255,255,255,0.3)",
+            }}
+            animate={{ backgroundPosition: ["0% center", "100% center", "0% center"] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           >
-            CLINICA <br className="md:hidden" />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-300">
-              BELLO HORIZONTE
-            </span>
+            CLINICA <br className="md:hidden" /> BELLO HORIZONTE
           </motion.h1>
+
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "100px" }}
@@ -70,10 +76,7 @@ export default function Home() {
       <ServiciosFlip />
       <TeamSection />
       {/* Banner de Doctores Destacados */}
-
       <DoctorsSection />
-
-
     </main>
   );
 }

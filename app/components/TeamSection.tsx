@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 
 // Datos de ejemplo (puedes importarlos desde tu archivo real)
 const destacados = [
@@ -11,7 +10,7 @@ const destacados = [
         especialidad: "Ginecología y Obstetricia",
         descripcion:
             "Médico cirujano con especialidad en Ginecología y Obstetricia, respaldado por 20 años de experiencia...",
-        imagen: "/images/doctor1.jpg",
+        imagen: "../images/medicoespecializado.png",
     },
     {
         id: 2,
@@ -19,7 +18,7 @@ const destacados = [
         especialidad: "Cirugía General",
         descripcion:
             "Especialista en Cirugía General, brinda una atención quirúrgica segura, confiable y orientada al...",
-        imagen: "/images/doctor2.jpg",
+        imagen: "../images/medicoespecializado2.png",
     },
     {
         id: 3,
@@ -57,11 +56,11 @@ export default function TeamSection() {
                     </h2>
                     <div className="w-24 h-1 bg-gradient-to-r from-[#10b5c5] to-[#0173BC] mx-auto rounded-full" />
                     <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
-                        Profesionales con prometidos con tu salud
+                        Profesionales comprometidos con tu salud
                     </p>
                 </motion.div>
 
-                {/* Grid de tarjetas - Versión mejorada */}
+                {/* Grid de tarjetas */}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 auto-rows-fr">
                     {destacados.map((medico, index) => (
                         <motion.div
@@ -73,22 +72,17 @@ export default function TeamSection() {
                             className="group h-full"
                         >
                             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#10b5c5]/30 hover:scale-[1.02] transform-gpu flex flex-col h-full">
-                                {/* Imagen con overlay - Altura fija para consistencia */}
-                                <div className="relative h-72 overflow-hidden">
+                                {/* Imagen sin overlay ni texto superpuesto */}
+                                <div className="relative h-96 overflow-hidden">
                                     <img
                                         src={medico.imagen}
                                         alt={medico.nombre}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                                    <div className="absolute bottom-4 left-4 right-4">
-                                        <span className="inline-block px-3 py-1 bg-[#10b5c5]/90 backdrop-blur-sm text-white text-xs font-semibold rounded-full">
-                                            {medico.especialidad}
-                                        </span>
-                                    </div>
+                                    {/* Eliminados: gradiente y etiqueta de especialidad */}
                                 </div>
 
-                                {/* Contenido - Flex column para ocupar todo el espacio restante */}
+                                {/* Contenido */}
                                 <div className="p-6 flex flex-col flex-grow">
                                     <h3 className="text-xl font-bold text-gray-800 mb-3">
                                         {medico.nombre}
@@ -96,7 +90,6 @@ export default function TeamSection() {
                                     <p className="text-gray-600 text-sm mb-4 flex-grow">
                                         {medico.descripcion}
                                     </p>
-
                                 </div>
                             </div>
                         </motion.div>

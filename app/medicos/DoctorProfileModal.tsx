@@ -20,12 +20,15 @@ export default function DoctorProfileModal({ medico, onClose }: DoctorProfileMod
       <div className="bg-white w-full max-w-6xl rounded-lg shadow-2xl overflow-hidden flex flex-col my-auto animate-in fade-in zoom-in duration-200">
         
         {/* HEADER SIMPLE */}
-        <div className="flex justify-between items-center bg-white px-6 py-3 border-b">
+        <div className="flex justify-between items-center bg-[#0173BC] px-6 py-4 border-b">
           <div className="flex items-center gap-2">
-             {/*<span className="bg-gray-100 text-gray-500 text-xs font-bold px-2 py-1 rounded"></span>*/}
-             <h2 className="text-gray-400 font-medium text-sm">Perfil del Médico</h2>
+            {/*<span className="bg-white/20 text-white text-xs font-bold px-2 py-1 rounded">CV</span> */}
+            <h2 className="text-white font-semibold text-lg">Perfil del Médico</h2>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl transition-transform hover:scale-110">
+          <button 
+            onClick={onClose} 
+            className="text-white/80 hover:text-white text-3xl transition-transform hover:rotate-90 leading-none"
+          >
             &times;
           </button>
         </div>

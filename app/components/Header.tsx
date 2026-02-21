@@ -33,7 +33,7 @@ export default function Header() {
                 <Link href="/" onClick={closeMenu} className="cursor-pointer hover:opacity-80 transition-opacity">
                     <img
                         src="/logo-bello-horizonte.png"
-                        alt="Logo Clínica Bello Horizonte"
+                        alt="Logo Clínica Belfhhgorizonte"
                         className="h-10 md:h-14 w-auto"
                     />
                 </Link>
@@ -72,7 +72,7 @@ export default function Header() {
                         <Link href="/servicios" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Servicios</Link>
                     </li>
                     <li>
-                        <Link href="/Blog" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Blog</Link>
+                        <Link href="/blog" onClick={closeMenu} className="hover:text-blue-300 transition-colors">Blog</Link>
                     </li>
                     <li className="mt-4 md:mt-0">
                         <Link

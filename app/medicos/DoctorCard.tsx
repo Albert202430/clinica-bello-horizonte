@@ -28,7 +28,7 @@ export default function DoctorCard({ medico, onVerPerfil }: DoctorCardProps) {
         {medico.especialidad}
       </p>
 
-      {/* Descripción con límite de líneas (line-clamp) */}
+      {/* Descripción con límite de líneas*/}
       <p className="text-gray-500 text-sm mb-6 flex-grow line-clamp-3">
         {medico.descripcion}
       </p>

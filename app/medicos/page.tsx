@@ -28,7 +28,7 @@ export default function MedicosPage() {
     return ["Todas", ...Array.from(new Set(medicos.map((m) => m.especialidad)))];
   }, []);
 
-  //Memorizamos el filtrado (Esto resuelve tu error)
+  //Memorizamos el filtrado
   const medicosFiltrados = useMemo(() => {
     return medicos.filter((m) => {
       const coincideNombre = m.nombre.toLowerCase().includes(busqueda.toLowerCase());
@@ -75,6 +75,11 @@ export default function MedicosPage() {
           />
         </svg>
       </section>
+      
+      <br />
+      <br />
+      <br />
+      <br />
 
       {/* BUSCADOR */}
       <section className="max-w-6xl mx-auto -mt-16 px-4 sm:px-6 relative z-20">
@@ -113,7 +118,8 @@ export default function MedicosPage() {
           </button>
         </div>
       </section>
-{/* SECCIÓN DE RESULTADOS */}
+      
+      {/* SECCIÓN DE RESULTADOS */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {loading ? (
